@@ -17,8 +17,30 @@ $(".btn").click(function () {
   animatePress(userChosenColor);
   playSound(userChosenColor);
   userClickedPattern.push(userChosenColor);
+  checkAnswer(userClickedPattern.length - 1);
   //console.log(userClickedPattern);
 });
+
+function checkAnswer(currentLevel) {
+  if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
+    console.log("success");
+    if (userClickedPattern.length === gamePattern.length) {
+      setTimeout(() => nextSequence(), 1000);
+      userClickedPattern = [];
+    }
+  } else {
+    console.log("failure");
+    var audio = new Audio("sounds/wrong.mp3");
+    audio.play();
+    $("body").addClass("game-over");
+    gameStarted = false;
+    level = 0;
+    gamePattern = [];
+    userClickedPattern = [];
+    $("#level-title").text("Game Over! Press any key to restart");
+    setTimeout(() => $("body").removeClass("game-over"), 200);
+  }
+}
 
 function animatePress(currentColor) {
   $("#" + currentColor).addClass("pressed");

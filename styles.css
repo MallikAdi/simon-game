@@ -74,8 +74,8 @@ body {
 #instructions {
   display: none;
   position: absolute;
-  top: 50px; /* Adjusted top position */
-  right: 20px;
+  top: 14px; /* Adjusted top position */
+  right: 18px;
   width: 200px;
   padding: 10px;
   background-color: #fff;

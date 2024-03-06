@@ -17,6 +17,12 @@ $(document).on("keypress", function () {
 });
 
 $(".btn").click(function () {
+  if (!gameStarted) {
+    $("#level-title").text("Level " + level);
+    gameStarted = true;
+    nextSequence();
+    return;
+  }
   var userChosenColor = this.id;
   animatePress(userChosenColor);
   playSound(userChosenColor);

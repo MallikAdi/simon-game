@@ -24,6 +24,7 @@ body {
   width: 200px;
   border: 10px solid black;
   border-radius: 20%;
+  cursor: pointer;
 }
 
 .game-over {
@@ -51,3 +52,44 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+/* Styles for the question mark icon */
+#question-mark {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #007bff; /* Change color as needed */
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 999; /* Ensure the icon is on top */
+}
+
+/* Instructions styles */
+#instructions {
+  display: none;
+  position: absolute;
+  top: 50px; /* Adjusted top position */
+  right: 20px;
+  width: 200px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 0.5s ease-in-out forwards; /* Apply fade-in animation */
+}
+
+/* Animation keyframes for fade in */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+

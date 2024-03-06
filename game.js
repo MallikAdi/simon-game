@@ -4,6 +4,10 @@ var userClickedPattern = [];
 var gameStarted = false;
 var level = 0;
 
+$("#question-mark").click(function () {
+  $("#instructions").toggle();
+});
+
 $(document).on("keypress", function () {
   if (!gameStarted) {
     $("#level-title").text("Level " + level);
